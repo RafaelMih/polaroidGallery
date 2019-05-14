@@ -189,7 +189,7 @@
 
 
       function loadGallery(){
-        var countPhotos = 1;
+        var countPhotos = 2;
         var html = "";
 
         for (let index = 0; index < countPhotos; index++) {
@@ -210,7 +210,7 @@
         for (let i = 0; i < countPhotos; i++) {
           html += `<li>
             <a href="./images/maes/${index}/${i}.jpg">
-              <img src="./images/maes/${index}/${i}.jpg" title="${name}"/>
+              <img src="./images/maes/${index}/${i}.jpg" title="${name}" data-valign="top"/>
             </a>
           </li>`;
         }
@@ -219,7 +219,7 @@
       }
 
       function getMotherName(index){
-        var name = `Nome da mãe ${index}`;
+        var name = `Nome da mãe`;
         return name;
       }
 
