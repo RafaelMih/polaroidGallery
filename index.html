@@ -175,8 +175,18 @@
 
       $(function() {
         slideshow.hide();
-        loadGallery();
+        //loadGallery();
       });
+
+      function showSlide(index){
+        galeria.hide('slow');
+        $(".vegas-background").show();
+        $(".vegas-overlay").show();
+        slideshow.show('slow');
+        //loadSlideShow(index);
+        callSlide();
+      }
+
 
       function loadGallery(){
         var countPhotos = 1;
@@ -191,15 +201,6 @@
         }
 
         $("#galeria").html(html);
-      }
-
-      function showSlide(index){
-        galeria.hide('slow');
-        $(".vegas-background").show();
-        $(".vegas-overlay").show();
-        slideshow.show('slow');
-        loadSlideShow(index);
-        callSlide();
       }
 
       function loadSlideShow(index){
