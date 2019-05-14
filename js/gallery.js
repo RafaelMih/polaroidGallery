@@ -1,6 +1,5 @@
-var pictures = [];
-
-$( function() {
+function callSlide(){
+    var pictures = [],
         $pointer = $( '#pointer' ),
         $thumbnails = $( '#thumbnails' ),
         $title = $( '#title' ),
@@ -22,7 +21,7 @@ $( function() {
         $volume.hide();    
     }
     
-    //trafficSound.loop().play().fadeIn( 5000 );
+    trafficSound.loop().play().fadeIn( 5000 );
 
     // jScrollPane
 
@@ -51,6 +50,11 @@ $( function() {
             valign: $( this ).find( 'img' ).data( 'valign' )
         });
     })
+
+    $.vegas( 'slideshow', { 
+        backgrounds: pictures,
+        delay: 4000
+     })( 'overlay' );
     
     $( 'body' ).bind( 'vegasload', function( e, img ) {
         var src = $( img ).attr( 'src' ),
@@ -134,13 +138,6 @@ $( function() {
 
         return false;
     });
-});
-
-function callSlide() {
-    $.vegas( 'slideshow', { 
-        backgrounds: pictures,
-        delay: 4000
-     })( 'overlay' );
 }
 
 function resetSlide() {

@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>New York</title>
+    <title>Dia das Mães - Ocupação Mandela</title>
     <link
       rel="stylesheet"
       type="text/css"
@@ -36,7 +36,7 @@
   <body>
     <!-- Galeria de imagens -->
     <div id="galeria">
-        <div onclick="showSlide(0)" class="polaroid ui-draggable col-xs-1 col-md-3 col-lg-2">
+        <div ondblclick="showSlide(0)" class="polaroid ui-draggable col-xs-1 col-md-3 col-lg-2">
           <img src="./images/01_colosseum.png" alt="Colloseum" />
           <p>Coloseum in Rome</p>
         </div>
@@ -90,7 +90,7 @@
         </p>
       </div>
       <div id="thumbnails">
-        <ul>
+        <ul id="listPhotos">
           <li>
             <a href="img/01.jpg"
               ><img src="img/01b.jpg" title="New York moving" data-valign="top"
@@ -164,7 +164,7 @@
         <div id="pointer"></div>
       </div>
       <div id="pause"><a href="#">Clique para continuar</a></div>
-      <div id="voltar" onclick="voltarGaleria()"><img src="img/back.png" width="30px"></div>
+      <div id="voltar" onclick="backToGallery()"><img src="img/back.png" width="30px"></div>
       <div id="volume" class="all"><a href="#">Áudio</a></div>
     </div>
     <!-- Fim do Slideshow -->
@@ -175,17 +175,54 @@
 
       $(function() {
         slideshow.hide();
+        loadGallery();
       });
+
+      function loadGallery(){
+        var countPhotos = 1;
+        var html = "";
+
+        for (let index = 0; index < countPhotos; index++) {
+          var name = getMotherName(index);
+          html += `<div ondblclick="showSlide(${index})" class="polaroid ui-draggable col-xs-1 col-md-3 col-lg-2">
+          <img src="./images/maes/${index}/${index}.jpg" alt="${name}" />
+          <p>${name}</p>
+        </div>`;
+        }
+
+        $("#galeria").html(html);
+      }
 
       function showSlide(index){
         galeria.hide('slow');
         $(".vegas-background").show();
         $(".vegas-overlay").show();
         slideshow.show('slow');
+        loadSlideShow(index);
         callSlide();
       }
 
-      function voltarGaleria(){
+      function loadSlideShow(index){
+        var name = getMotherName(index);
+        var countPhotos = 4;
+        var html = "";
+        for (let i = 0; i < countPhotos; i++) {
+          html += `<li>
+            <a href="./images/maes/${index}/${i}.jpg">
+              <img src="./images/maes/${index}/${i}.jpg" title="${name}"/>
+            </a>
+          </li>`;
+        }
+
+        $("#listPhotos").html(html);
+      }
+
+      function getMotherName(index){
+        var name = `Nome da mãe ${index}`;
+        return name;
+      }
+
+      function backToGallery(){
         slideshow.hide('slow');
         $(".vegas-background").hide();
         $(".vegas-overlay").hide();
