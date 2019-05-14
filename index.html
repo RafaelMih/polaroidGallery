@@ -1,61 +1,198 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <title>New York</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="http://fonts.googleapis.com/css?family=Ultra"
+    />
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
-
-    <title>Dia das Mães</title>
     <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="./css/bootstrap-theme.min.css" />
-    <link rel="stylesheet" type="text/css" href="./css/style.css" />
-    <script type="text/javascript" src="./js/jsapi.js"></script>
-    <script type="text/javascript" src="./js/script.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./css/bootstrap-theme.min.css"
+    />
+
+    <link rel="stylesheet" type="text/css" href="js/vegas/jquery.vegas.css" />
+    <link rel="stylesheet" type="text/css" href="js/jscrollpane/jquery.jscrollpane.css" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+
+    
     <script src="./js/jquery.min.js" type="text/javascript"></script>
     <script src="./js/jquery-ui.min.js" type="text/javascript"></script>
-    <script src="./js/bootstrap.min.js" type="text/javascript"></script>
-</head>
+    <script src="./js/jsapi.js" type="text/javascript"></script>
+    <script src="./js/script.js" ></script>
 
-<body>
-    <div class="polaroid ui-draggable col-xs-1 col-md-3 col-lg-2">
-        <img src="./images/01_colosseum.png" alt="Colloseum" />
-        <p>Coloseum in Rome</p>
-    </div>
-    <div class="polaroid ui-draggable col-xs-1 col-md-3 col-lg-2">
-        <img src="./images/02_vatican.png" alt="Vatican" />
-        <p>Vatican</p>
-    </div>
-    <div class="polaroid ui-draggable col-xs-1 col-md-3 col-lg-2">
-        <img src="./images/03_forum_romanum.png" alt="Forum Romanum" />
-        <p>Forum Romanum</p>
-    </div>
-    <div class="polaroid ui-draggable col-xs-1 col-md-3 col-lg-2">
-        <img src="./images/04_fiat_500.png" alt="Fiat 500" />
-        <p>Fiat 500 - Typical Italian car</p>
-    </div>
-    <div class="polaroid ui-draggable col-xs-1 col-md-3 col-lg-2">
-        <img src="./images/05_me_gf.png" alt="Me and my girl in Florance" />
-        <p>My girl and me in Florance</p>
-    </div>
-    <div class="polaroid ui-draggable col-xs-1 col-md-3 col-lg-2">
-        <img src="./images/06_venetian_gondolas.png" alt="Venetian Gondolas" />
-        <p>Venetian Gondolas</p>
-    </div>
-    <div class="polaroid ui-draggable col-xs-1 col-md-3 col-lg-2">
-        <img src="./images/07_pizza.png" alt="Pizza" />
-        <p>Delicious pizza - <strong>the</strong> Italian food</p>
-    </div>
-    <div class="polaroid ui-draggable col-xs-1 col-md-3 col-lg-2">
-        <img src="./images/08_pool.png" alt="Swimming pool" />
-        <p>Swimming pool near our house</p>
-    </div>
-    <div class="polaroid ui-draggable col-xs-1 col-md-3 col-lg-2">
-        <img src="./images/09_florence.png" alt="Florence" />
-        <p>Bridge in Florence - Ponte Vecchio</p>
-    </div>
-    <div class="polaroid ui-draggable col-xs-1 col-md-3 col-lg-2">
-        <img src="./images/10_tower_of_pisa.png" alt="Tower of Pisa" />
-        <p>Leaning Tower of Pisa</p>
-    </div>
-</body>
+    <script src="js/jquery.easing.js"></script>
+    <script src="js/vegas/jquery.vegas.js"></script>
+    <script src="js/jscrollpane/jquery.jscrollpane.min.js"></script>
+    <script src="js/buzz/buzz.js"></script>
+    <script src="js/gallery.js"></script>
+  </head>
 
+  <body>
+    <!-- Galeria de imagens -->
+    <div id="galeria">
+        <div onclick="showSlide(0)" class="polaroid ui-draggable col-xs-1 col-md-3 col-lg-2">
+          <img src="./images/01_colosseum.png" alt="Colloseum" />
+          <p>Coloseum in Rome</p>
+        </div>
+        <div class="polaroid ui-draggable col-xs-1 col-md-3 col-lg-2">
+          <img src="./images/02_vatican.png" alt="Vatican" />
+          <p>Vatican</p>
+        </div>
+        <div class="polaroid ui-draggable col-xs-1 col-md-3 col-lg-2">
+          <img src="./images/03_forum_romanum.png" alt="Forum Romanum" />
+          <p>Forum Romanum</p>
+        </div>
+        <div class="polaroid ui-draggable col-xs-1 col-md-3 col-lg-2">
+          <img src="./images/04_fiat_500.png" alt="Fiat 500" />
+          <p>Fiat 500 - Typical Italian car</p>
+        </div>
+        <div class="polaroid ui-draggable col-xs-1 col-md-3 col-lg-2">
+          <img src="./images/05_me_gf.png" alt="Me and my girl in Florance" />
+          <p>My girl and me in Florance</p>
+        </div>
+        <div class="polaroid ui-draggable col-xs-1 col-md-3 col-lg-2">
+          <img src="./images/06_venetian_gondolas.png" alt="Venetian Gondolas" />
+          <p>Venetian Gondolas</p>
+        </div>
+        <div class="polaroid ui-draggable col-xs-1 col-md-3 col-lg-2">
+          <img src="./images/07_pizza.png" alt="Pizza" />
+          <p>Delicious pizza - <strong>the</strong> Italian food</p>
+        </div>
+        <div class="polaroid ui-draggable col-xs-1 col-md-3 col-lg-2">
+          <img src="./images/08_pool.png" alt="Swimming pool" />
+          <p>Swimming pool near our house</p>
+        </div>
+        <div class="polaroid ui-draggable col-xs-1 col-md-3 col-lg-2">
+          <img src="./images/09_florence.png" alt="Florence" />
+          <p>Bridge in Florence - Ponte Vecchio</p>
+        </div>
+        <div class="polaroid ui-draggable col-xs-1 col-md-3 col-lg-2">
+          <img src="./images/10_tower_of_pisa.png" alt="Tower of Pisa" />
+          <p>Leaning Tower of Pisa</p>
+        </div>
+    </div>
+    <!--Fim da Galeria-->
+
+    <!-- Slideshow -->
+    <div id="slideshow">
+      <div id="flash"></div>
+      <div id="title">
+        <h1>Dia das Mães - Mandela</h1>
+        <p>
+          Fotos por:
+          <a href="#">Felipe, Rebeca e Isabella Cócolo</a>
+        </p>
+      </div>
+      <div id="thumbnails">
+        <ul>
+          <li>
+            <a href="img/01.jpg"
+              ><img src="img/01b.jpg" title="New York moving" data-valign="top"
+            /></a>
+          </li>
+          <li>
+            <a href="img/02.jpg"
+              ><img
+                src="img/02b.jpg"
+                title="New York traffic"
+                data-valign="bottom"
+            /></a>
+          </li>
+          <li>
+            <a href="img/03.jpg"
+              ><img src="img/03b.jpg" title="Street dancers"
+            /></a>
+          </li>
+          <li>
+            <a href="img/04.jpg"><img src="img/04b.jpg" title="Lights"/></a>
+          </li>
+          <li>
+            <a href="img/05.jpg"><img src="img/05b.jpg" title="NBC Studio"/></a>
+          </li>
+          <li>
+            <a href="img/06.jpg"
+              ><img
+                src="img/06b.jpg"
+                title="New York by night"
+                data-valign="top"
+            /></a>
+          </li>
+          <li>
+            <a href="img/07.jpg"
+              ><img src="img/07b.jpg" title="Empire State Building"
+            /></a>
+          </li>
+          <li>
+            <a href="img/08.jpg"
+              ><img
+                src="img/08b.jpg"
+                title="New York Promenade"
+                data-valign="top"
+            /></a>
+          </li>
+          <li>
+            <a href="img/09.jpg"
+              ><img
+                src="img/09b.jpg"
+                title="Ellis Island Flag"
+                data-valign="top"
+            /></a>
+          </li>
+          <li>
+            <a href="img/10.jpg"
+              ><img src="img/10b.jpg" title="Central Park"
+            /></a>
+          </li>
+          <li>
+            <a href="img/11.jpg"
+              ><img
+                src="img/11b.jpg"
+                title="Statue of Liberty"
+                data-valign="top"
+            /></a>
+          </li>
+          <li>
+            <a href="img/12.jpg"><img src="img/12b.jpg" title="Shoes"/></a>
+          </li>
+        </ul>
+        <div id="pointer"></div>
+      </div>
+      <div id="pause"><a href="#">Clique para continuar</a></div>
+      <div id="voltar" onclick="voltarGaleria()"><img src="img/back.png" width="30px"></div>
+      <div id="volume" class="all"><a href="#">Áudio</a></div>
+    </div>
+    <!-- Fim do Slideshow -->
+
+    <script type="text/javascript">
+      var slideshow = $("#slideshow");
+      var galeria = $("#galeria");
+
+      $(function() {
+        slideshow.hide();
+      });
+
+      function showSlide(index){
+        galeria.hide('slow');
+        $(".vegas-background").show();
+        $(".vegas-overlay").show();
+        slideshow.show('slow');
+        callSlide();
+      }
+
+      function voltarGaleria(){
+        slideshow.hide('slow');
+        $(".vegas-background").hide();
+        $(".vegas-overlay").hide();
+        galeria.show('slow');
+        resetSlide();
+      }
+
+    </script>
+  </body>
 </html>

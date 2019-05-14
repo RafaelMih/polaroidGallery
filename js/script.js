@@ -1,8 +1,6 @@
 /*
  * Author:      Marco Kuiper (http://www.marcofolio.net/)
  */
-google.load("jquery", "1.3.1");
-google.load("jqueryui", "1.7.0");
 google.setOnLoadCallback(function() {
     // When everything has loaded, place all polaroids on a random position	
     $(".polaroid").each(function(i) {
