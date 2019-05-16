@@ -20,5 +20,7 @@
 }
 
 .vegas-background {
+    image-rendering: optimizeQuality;
+    -ms-interpolation-mode: bicubic;
     z-index: -2;
 }

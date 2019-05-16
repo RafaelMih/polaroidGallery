@@ -2,13 +2,13 @@
  * Author:      Marco Kuiper (http://www.marcofolio.net/)
  */
 google.setOnLoadCallback(function() {
-    // When everything has loaded, place all polaroids on a random position	
+    // When everything has loaded, place all polaroids on a random position
     $(".polaroid").each(function(i) {
         var tempVal = Math.round(Math.random());
         if (tempVal == 1) {
-            var rotDegrees = randomXToY(330, 360); // rotate left
+            var rotDegrees = randomXToY(340, 360); // rotate left
         } else {
-            var rotDegrees = randomXToY(0, 30); // rotate right
+            var rotDegrees = randomXToY(0, 20); // rotate right
         }
 
         // Internet Explorer doesn't have the "window.innerWidth" and "window.innerHeight" properties
@@ -20,13 +20,12 @@ google.setOnLoadCallback(function() {
             var wih = window.innerHeight;
         }
 
-
         // var cssObj = {};
         var cssObj = {
             //'left': (i * 100),
             //'top': (i * 100),
-            '-webkit-transform': 'rotate(' + rotDegrees + 'deg)', // safari only
-            'transform': 'rotate(' + rotDegrees + 'deg)'
+            "-webkit-transform": "rotate(" + rotDegrees + "deg)", // safari only
+            transform: "rotate(" + rotDegrees + "deg)"
         }; // added in case CSS3 is standard
         // var cssObj = {
         //     'z-index': zindexnr,
@@ -49,9 +48,9 @@ google.setOnLoadCallback(function() {
             zindexnr++;
             var cssObj = {};
             var cssObj = {
-                'z-index': zindexnr,
-                'transform': 'rotate(0deg)', // added in case CSS3 is standard
-                '-webkit-transform': 'rotate(0deg)'
+                "z-index": zindexnr,
+                transform: "rotate(0deg)", // added in case CSS3 is standard
+                "-webkit-transform": "rotate(0deg)"
             }; // safari only
             $(this).css(cssObj);
         }
@@ -59,17 +58,17 @@ google.setOnLoadCallback(function() {
 
     // Make the polaroid draggable & display a shadow when dragging
     $(".polaroid").draggable({
-        cursor: 'crosshair',
+        cursor: "crosshair",
         start: function(event, ui) {
             dragging = true;
             zindexnr++;
             var cssObj = {};
             var cssObj = {
-                'box-shadow': '#888 5px 10px 10px', // added in case CSS3 is standard
-                '-webkit-box-shadow': '#888 5px 10px 10px', // safari only
-                'margin-left': '-10px',
-                'margin-top': '-10px',
-                'z-index': zindexnr
+                "box-shadow": "#888 5px 10px 10px", // added in case CSS3 is standard
+                "-webkit-box-shadow": "#888 5px 10px 10px", // safari only
+                "margin-left": "-10px",
+                "margin-top": "-10px",
+                "z-index": zindexnr
             };
             $(this).css(cssObj);
         },
@@ -84,12 +83,12 @@ google.setOnLoadCallback(function() {
             var cssObj = {};
 
             var cssObj = {
-                'box-shadow': '', // added in case CSS3 is standard
-                '-webkit-box-shadow': '', // safari only
-                'transform': 'rotate(' + 0 + 'deg)', // added in case CSS3 is standard
-                '-webkit-transform': 'rotate(' + 0 + 'deg)', // safari only
-                'margin-left': '0px',
-                'margin-top': '0px'
+                "box-shadow": "", // added in case CSS3 is standard
+                "-webkit-box-shadow": "", // safari only
+                transform: "rotate(" + 0 + "deg)", // added in case CSS3 is standard
+                "-webkit-transform": "rotate(" + 0 + "deg)", // safari only
+                "margin-left": "0px",
+                "margin-top": "0px"
             };
             $(this).css(cssObj);
             dragging = false;
@@ -99,8 +98,9 @@ google.setOnLoadCallback(function() {
     // Function to get random number upto m
     // http://roshanbh.com.np/2008/09/get-random-number-range-two-numbers-javascript.html
     function randomXToY(minVal, maxVal, floatVal) {
-        var randVal = minVal + (Math.random() * (maxVal - minVal));
-        return typeof floatVal == 'undefined' ? Math.round(randVal) : randVal.toFixed(floatVal);
+        var randVal = minVal + Math.random() * (maxVal - minVal);
+        return typeof floatVal == "undefined" ?
+            Math.round(randVal) :
+            randVal.toFixed(floatVal);
     }
-
 });
