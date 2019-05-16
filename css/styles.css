@@ -9,173 +9,189 @@ p {
 body {
     overflow: auto;
     background-image: url(../images/bg.jpg);
+    margin-top: 5px;
 }
 
 .polaroid {
-    width: 368px;
-    height: 376px;
-    background-image: url(../images/polaroid-bg.png);
+    width: 276px;
+    height: 282px;
+    background-image: url(../images/polaroid-bg.jpg);
     float: left;
     margin: 20px;
     cursor: pointer;
 }
 
 .polaroid img {
-    width: 335px;
-    height: 275px;
-    margin: 29px 0 0 3px;
+    width: 249px;
+    height: 203px;
+    margin: 21px 0 0 -2px;
 }
 
 .polaroid p {
     text-align: center;
     font-family: Georgia, serif;
     font-size: 20px;
-    color: #2E2E2E;
-    margin-top: 15px;
+    color: #2e2e2e;
+    margin-top: 3px;
 }
 
 a {
-	color: #F30;
-	text-decoration: none;	
+    color: #f30;
+    text-decoration: none;
 }
+
 img {
-	border: 0;	
+    border: 0;
 }
 
 #title {
-	background: #000;
-	background: rgba(0, 0, 0, 0.8);
-	bottom: 0px;
-	font: 11px Arial, Helvetica, sans-serif;
-	padding: 10px 20px;
-	position: fixed;
-	right: 0px;	
-	text-align: right;
-	width: 100%;
-	color: #fff;
+    background: #000;
+    background: rgba(0, 0, 0, 0.8);
+    bottom: 0px;
+    font: 11px Arial, Helvetica, sans-serif;
+    padding: 10px 20px;
+    position: fixed;
+    right: 0px;
+    text-align: right;
+    width: 100%;
+    color: #fff;
 }
-	#title h1 {
-		font: 30px 'Ultra', Arial, serif;
-		margin: 0;	
-		padding: 0;
-	}
+
+#title h1 {
+    font: 30px "Ultra", Arial, serif;
+    margin: 0;
+    padding: 0;
+}
 
 #thumbnails {
-	background: #000;
-	background: rgba(0, 0, 0, 0.8);	
-	height: 90px;
-	left: 0;
-	overflow: hidden;
-	position: fixed;
-	top: 0;
-	width: 100%;
+    background: #000;
+    background: rgba(0, 0, 0, 0.8);
+    height: 90px;
+    left: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
-	#thumbnails ul {
-		margin: 0;
-		padding: 0;
-	}
-		#thumbnails li {
-			float: left;
-			list-style: none;
-			margin: 5px;
-			padding: 0;
-		}
-		#thumbnails a {
-			outline: none;
-		}
-		#thumbnails img {
-			width: 112px;
-		}
-			
+
+#thumbnails ul {
+    margin: 0;
+    padding: 0;
+}
+
+#thumbnails li {
+    float: left;
+    list-style: none;
+    margin: 5px;
+    padding: 0;
+}
+
+#thumbnails a {
+    outline: none;
+}
+
+#thumbnails img {
+    width: 112px;
+}
+
 #pointer {
-	border: 2px solid #F30;
-	cursor: pointer;
-	height: 75px;
-	left: -100px;
-	margin: 3px;
-	position: absolute;
-	width: 112px;
+    border: 2px solid #f30;
+    cursor: pointer;
+    height: 75px;
+    left: -100px;
+    margin: 3px;
+    position: absolute;
+    width: 112px;
 }
 
 #flash {
-	background: #FFF;
-	display: none;
-	height: 100%;
-	position: fixed;
-	width: 100%;
+    background: #fff;
+    display: none;
+    height: 100%;
+    position: fixed;
+    width: 100%;
 }
 
 #pause {
-	display: none;
-	font: 100px 'Ultra', arial, serif;
-	height: 100%;
-	opacity: 0.4;
-	position: absolute;
-	text-align: center;
-	text-shadow: 0 0 5px #000;
-	width: 100%;
+    display: none;
+    font: 100px "Ultra", arial, serif;
+    height: 100%;
+    opacity: 0.4;
+    position: absolute;
+    text-align: center;
+    text-shadow: 0 0 5px #000;
+    width: 100%;
 }
-	#pause a {
-		color: #FFF;
-		height: 100px;
-		left: 50%;
-		margin: -50px 0 0 -250px;
-		position: absolute;
-		text-transform: uppercase;
-		top: 95%;
-		width: 500px;
-		font-size: 30px;
-	}
+
+#pause a {
+    color: #fff;
+    height: 100px;
+    left: 50%;
+    margin: -50px 0 0 -250px;
+    position: absolute;
+    text-transform: uppercase;
+    top: 95%;
+    width: 500px;
+    font-size: 30px;
+}
 
 #voltar {
-	left: 10px;
-	position: absolute;
-	top: 150px;
-	cursor: pointer;
+    left: 10px;
+    position: absolute;
+    top: 150px;
+    cursor: pointer;
 }
 
 #volume {
-	left: 10px;
-	opacity: 0.8;
-	position: absolute;
-	top: 100px;
+    left: 10px;
+    opacity: 0.8;
+    position: absolute;
+    top: 100px;
 }
-    #volume a {
-    	background: transparent url(../img/icons.png) no-repeat;
-    	display: block;
-    	height: 30px;
-    	text-indent: -9999px;
-    	width: 30px;
-    }
-	#volume.all a {
-		background-position: 0 0;
-	}
-	#volume.some a {
-		background-position: -30px 0;
-	}
-	#volume.none a {
-		background-position: -60px 0;
-	}
-	
+
+#volume a {
+    background: transparent url(../img/icons.png) no-repeat;
+    display: block;
+    height: 30px;
+    text-indent: -9999px;
+    width: 30px;
+}
+
+#volume.all a {
+    background-position: 0 0;
+}
+
+#volume.some a {
+    background-position: -30px 0;
+}
+
+#volume.none a {
+    background-position: -60px 0;
+}
+
 .vegas-loading {
-	top: auto;
-	bottom: 40px;
-	left: 40px;
+    top: auto;
+    bottom: 40px;
+    left: 40px;
 }
+
 .vegas-overlay {
-	background-image: url(../js/vegas/overlays/00.png);
+    background-image: none;
 }
 
 .jspHorizontalBar {
-	height: 5px;	
+    height: 5px;
 }
-	.jspHorizontalBar .jspTrack {
-		background: #333;
-	}
-	.jspHorizontalBar .jspDrag {
-		background: #666;
-		cursor: ew-resize;
-	}
-	#thumbnails:hover .jspHorizontalBar .jspDrag {
-		background: #F30;
-    }           
+
+.jspHorizontalBar .jspTrack {
+    background: #333;
+}
+
+.jspHorizontalBar .jspDrag {
+    background: #666;
+    cursor: ew-resize;
+}
+
+#thumbnails:hover .jspHorizontalBar .jspDrag {
+    background: #f30;
+}

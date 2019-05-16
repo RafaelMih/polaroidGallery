@@ -4,7 +4,7 @@ function showSlide(index) {
     $(".vegas-overlay").show();
     slideshow.show("slow");
     loadSlideShow(index);
-    callSlide();
+    callSlide(index);
 }
 
 function backToGallery() {
@@ -13,6 +13,7 @@ function backToGallery() {
     $(".vegas-overlay").hide();
     galeria.show("slow");
     resetSlide();
+    audioStop();
 }
 
 function shuffle(array) {
