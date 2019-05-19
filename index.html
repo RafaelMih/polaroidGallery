@@ -58,7 +58,7 @@
     <!-- Fim do Slideshow -->
 
     <script type="text/javascript">
-        var countGalleryPhotos = 10;
+        var countGalleryPhotos = 25;
         var slideshow = $("#slideshow");
         var galeria = $("#galeria");
 
@@ -68,131 +68,88 @@
             volumeHide(true);
         });
 
-        function loadGallery() {
-            var html = "";
-            var galleryPhotos = [];
-
-            for (var a = [], i = 0; i < countGalleryPhotos; ++i)
-                galleryPhotos[i] = i;
-
-            galleryPhotos = shuffle(galleryPhotos);
-
-            galleryPhotos.forEach(index => {
-                var name = getMotherName(index);
-                html += `<div onclick="showSlide(${index})" class="polaroid ui-draggable col-xs-1 col-md-3 col-lg-2">
-                            <img src="./images/maes/${index}/f.jpg" alt="${name}" />
-                            <p>${name}</p>
-                         </div>`;
-            });
-
-            $("#galeria").html(html);
-        }
-
-        function loadSlideShow(index) {
-            var name = getMotherName(index);
-            var countPhotos = getCountPhotos(index);
-            var html = "";
-            for (let i = 0; i < countPhotos; i++) {
-                html += `<li>
-                            <a href="./images/maes/${index}/${i}.jpg">
-                                <img src="./images/maes/${index}/${i}.jpg" title="${name}" data-valign="middle"/>
-                            </a>
-                        </li>`;
-            }
-
-            $("#listPhotos").html(html);
-        }
+        
 
         function getMotherName(index) {
+            var containAudio = " (contém áudio)";
             switch (index) {
                 case 0:
-                    return "Tamires - Filho Nicolas";
+                    return "Tamires - Filho Nicolas" + containAudio;
                 case 1:
-                    return "Ana Claudia - Filhos Ana Karolina";
+                    return "Ana Claudia - Filha Ana Karolina"+ containAudio;
                 case 2:
-                    return "Paula - Filho Manu e Hadassa";
+                    return "Paula - Filhoa Manu e Hadassa"+ containAudio;
                 case 3:
                     return "Flavia - Filhos Yasmin e Henry";
                 case 4:
                     return "Jaciara - Filhos Flavia e Levy";
                 case 5:
-                    return "Rosileide - Filhos Ronilson e Vagno";
+                    return "Rosileide - Filhos Ronilson e Vagno"+ containAudio;
                 case 6:
-                    return "Vanilsa - Filha Débora";
+                    return "Vanilsa - Filha Débora"+ containAudio;
                 case 7:
-                    return "Larissa - Filhos Maria Eduarda e Braian Henrique";
+                    return "Larissa - Filhos Maria Eduarda e Braian Henrique"+ containAudio;
                 case 8:
-                    return "Vó Célia - Neta Hadassa";
+                    return "Vó Célia - Neta Hadassa"+ containAudio;
                 case 9:
                     return "Telma - Filha Jaitana Neta Luana";
+                default:
+                    return "Dia das mães - Mandela";
             }
         }
 
         function getCountPhotos(index) {
             switch (index) {
-                case 0:
-                    return 3;
-                case 1:
-                    return 1;
-                case 2:
-                    return 3;
-                case 3:
-                    return 3;
                 case 4:
                     return 1;
                 case 5:
                     return 2;
                 case 6:
                     return 1;
-                case 7:
-                    return 3;
                 case 8:
                     return 2;
                 case 9:
                     return 2;
+                case 10:
+                    return 2;
+                case 11:
+                    return 1;
+                case 13:
+                    return 2;
+                case 15:
+                    return 1;
+                case 16:
+                    return 2;
+                case 18:
+                    return 1;
+                case 20:
+                    return 2;
+                case 21:
+                    return 2;
+                case 22:
+                    return 1;
+                case 23:
+                    return 2;
+                case 25:
+                    return 1;
+                default: 
+                    return 3;
             }
         }
 
         function getAudio(index) {
             var src = '';
-            switch (index) {
-                case 2:
-                    {
-                        src = 'https://ccrma.stanford.edu/~jos/mp3/JazzTrio.mp3';
-                        volumeHide(false, src);
-                        break;
-                    }
-                default:
-                    {
-                        volumeHide(true);
-                    }
-            }
-        }
+            var arrayAudio = [0, 1, 2, 5, 6, 7, 8, 23, 24];
 
-        function volumeHide(hidden, src) {
-            if (hidden) {
-                $("#volume").hide();
-                $("#audio").hide();
-                audioStop();
-            } else {
-                $("#volume").show();
-                audioPlay(src);
+            if (arrayAudio.indexOf(index) > -1){
+                setTimeout(function(){
+                volumeHide(false, `./images/maes/${index}/audio.mp3`);
+                }, 1000)
             }
-        }
-
-        function audioPlay(src) {
-            if (src) {
-                $("#audio").attr('src', src);
-                $("#audio").trigger('play');
-            } else {
-                audioStop();
+            else{
+                volumeHide(true);
             }
-        }
-
-        function audioStop() {
-            $("#audio").trigger('pause');
-            $("#audio").currentTime = 0.0;
-        }
+        }  
     </script>
 </body>
 
